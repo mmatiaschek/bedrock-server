@@ -87,6 +87,13 @@
         rule: allow
         name: OpenSSH
 
+    - name: Allow incoming access to udp port 19132 for minecraft server
+      ufw:
+        rule: allow
+        direction: in
+        proto: udp
+        to_port: '19132'
+
     - name: UFW - Deny all other incoming traffic by default
       ufw:
         state: enabled
